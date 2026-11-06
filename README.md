@@ -32,7 +32,8 @@ Fri–Sun: Draft the report sections in parallel, then swap and proofread each o
 Mon–Tue: Finalize the model choice, record and edit the video.
 Wed: Check that the checkpoint loads in a fresh environment and the report meets the page requirement.
 Thu: Submit, with Wed as a buffer.
+
 Two-person tips
-Whoever has less GPU access should take the writing-heavy tasks early, then switch to run monitoring.
-With only 2 people, the 30-epoch runs are your real constraint. If you can only afford about 5 runs, drop the optional optimizer run first and keep the novelty run.
-Use the shared GitHub repo for code and a shared doc for the report and results table, so neither of you blocks the other.
+- Whoever has less GPU access should take the writing-heavy tasks early, then switch to run monitoring.
+- With only 2 people, the 30-epoch runs are your real constraint. If you can only afford about 5 runs, drop the optional optimizer run first and keep the novelty run.
+- Use the shared GitHub repo for code and a shared doc for the report and results table, so neither of you blocks the other.
