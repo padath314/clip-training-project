@@ -30,3 +30,6 @@ Source Colab Notebook --> https://colab.research.google.com/drive/1FTF-cTcW11Gyr
 - [ ] Smoke test (2k subset, 1 epoch) + COCO and ImageNet eval
 - [ ] Launch CLIP + AdamW baseline (30 epochs), then SogCLR + AdamW (gamma 0.8, tau 0.01)
 - [ ] Thu sync with B: loss curves, time/epoch, val numbers
+
+### Susan 17th November 2026
+- Cloned iSogCLR code; verified data paths match. Losses: clip / sogclr / isogclr_new (+ cyclip, vicreg, onlineclr available). Optimizers: adamw (default), radam/nadam, momentum SGD. Training on lab GPU.
