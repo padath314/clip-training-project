@@ -18,4 +18,3 @@ output/
 wandb/
 logs/*.log
 
-iSogCLR/
