@@ -32,37 +32,4 @@ Source Colab Notebook --> https://colab.research.google.com/drive/1FTF-cTcW11Gyr
 - [ ] Thu sync with B: loss curves, time/epoch, val numbers
 
 ### Susan 17th November 2026
-- Cloned iSogCLR code; verified data paths match. Losses: clip / sogclr / isogclr_new (+ cyclip, vicreg, onlineclr available). Optimizers: adamw (default), radam/nadam, momentum SGD. 
-
-### Susan 19th November 2026
-
-**Smoke test (friend's machine)**
-- Hardware: NVIDIA RTX 4070 (12 GB), conda env `susan` (Python 3.10)
-- Code: `iSogCLR/bimodal_exps/clip.py` (course codebase `csce689_iSogCLR`, branch `project`, unmodified)
-- Data: subset built on Mac with `make_smoke.py` (278 MB)
-  - 2,000 CC3M training pairs
-  - 500 MSCOCO val pairs
-  - ImageNet val: 1 image per class (1,000 classes)
-- Settings: `--ita_type clip`, default optimizer AdamW, `--use_amp`, `--init_model`, tau 0.01, batch 128, 1 epoch
-
-Training command:
-```bash
-python iSogCLR/bimodal_exps/clip.py --data_path ./datasets --ann_path ./clip_train --train_file cc3m_train_subset.json --train_image_root cc3m_subset_100k --output_dir output/smoke --init_model --use_amp --ita_type clip --tau_init 0.01 --eta_init 0.03 --sched cosine --no-distributed --epochs 1
-```
-Eval: same command + `--evaluate --checkpoint output/smoke/checkpoint_1.pth --zs_dataset imagenet --zs_datafolder ./datasets/imagenet/val`
-
-**Results**
-- Training ran end to end: loss 11.32 → 9.57 over 15 steps; checkpoint saved (`output/smoke/checkpoint_1.pth`)
-- Peak GPU memory: 9.2 GB; batch 128 + AMP fits on 12 GB
-- Speed: 0.89 s/step → ~11–12 min/epoch on 100k → ~6 h per 30-epoch run on a 4070
-- COCO retrieval eval works (TR@1 0.2, IR@1 0.08; near zero as expected after 1 epoch on 2k pairs)
-- ImageNet zero-shot eval: pending rerun
-
-**To fix next time**
-- Archives made on the Mac include hidden `._*` files that break ImageNet eval: build with `COPYFILE_DISABLE=1 tar cf ...`, or delete with `find datasets -name '._*' -delete`
-- Validation metrics aren't logged during training; evaluate saved checkpoints separately and check which epochs get checkpointed before the 30-epoch runs
-
-**Next**
-- [ ] Rerun eval after deleting `._*` files; confirm ImageNet accuracy prints
-- [ ] Check checkpoint-saving logic (every epoch vs. final only) for model selection
-- [ ] Launch CLIP + AdamW 30-epoch baseline on lab GPU, then SogCLR + AdamW
+- Cloned iSogCLR code; verified data paths match. Losses: clip / sogclr / isogclr_new (+ cyclip, vicreg, onlineclr available). Optimizers: adamw (default), radam/nadam, momentum SGD. Training on lab GPU.
