@@ -10,11 +10,10 @@ clip_train/
 *.tar
 *.tar.gz
 *.zip
-
 checkpoints/
 output/
 *.pth
 *.pt
 wandb/
 logs/*.log
-
+env.sh
