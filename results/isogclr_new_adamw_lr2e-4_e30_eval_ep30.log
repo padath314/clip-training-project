@@ -1,0 +1,13 @@
+Creating retrieval dataset
+len of train_dataset: 100000
+len of coco val: 5000
+Creating model
+load checkpoint from output/isogclr_new_adamw_lr2e-4_e30/checkpoint_30.pth
+Start training
+Computing features for evaluation...
+Evaluation time 0:00:16
+coco val: {'txt_r1': 14.04, 'txt_r5': 33.22, 'txt_r10': 45.74, 'txt_r_mean': 31.0, 'img_r1': 10.804110520212724, 'img_r5': 27.821984085729138, 'img_r10': 38.35819105122156, 'img_r_mean': 25.661428552387804, 'r_mean': 28.330714276193902}
+[W1120 12:13:28.830086232 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2149580800 bytes (free: 2168717312, total: 12446924800).
+[W1120 12:13:28.212153851 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 2149580800 bytes (free: 2168717312, total: 12446924800).
+zeroshot: {'zeroshot_top1': 26.45, 'zeroshot_top3': 39.492, 'zeroshot_top5': 45.32, 'zeroshot_top10': 52.424}
+Training time 0:01:59

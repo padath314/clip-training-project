@@ -1,0 +1,11 @@
+Creating retrieval dataset
+len of train_dataset: 100000
+len of coco val: 5000
+Creating model
+load checkpoint from output/clip_adamw_lr2e-4_e30/checkpoint_30.pth
+Start training
+Computing features for evaluation...
+Evaluation time 0:00:17
+coco val: {'txt_r1': 12.04, 'txt_r5': 31.22, 'txt_r10': 43.2, 'txt_r_mean': 28.820000000000004, 'img_r1': 9.500579791275142, 'img_r5': 25.346875124955016, 'img_r10': 36.27494102123236, 'img_r_mean': 23.707465312487503, 'r_mean': 26.263732656243754}
+zeroshot: {'zeroshot_top1': 21.744, 'zeroshot_top3': 34.07, 'zeroshot_top5': 40.268, 'zeroshot_top10': 48.524}
+Training time 0:01:56
